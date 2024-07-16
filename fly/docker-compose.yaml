@@ -1,0 +1,21 @@
+version: '3'
+services:
+  fly:
+    image: ghcr.io/cedar2025/xboard:latest
+    ports:
+       - "7009:7001"
+    volumes:
+      - ./.env:/www/.env
+      - ./.docker/.data/:/www/.docker/.data/
+      # - ./config/v2board.php:/www/config/v2board.php
+    environment:
+      - docker=true #用于给安装脚本判断是否为docker环境
+    restart: always
+    networks:
+      xb-net:
+        ipv4_address: 172.20.0.19
+
+networks:
+  xb-net:
+    external: true
+    name: mynet

@@ -1,0 +1,21 @@
+version: '3'
+services:
+   redis:
+     image: redis:latest
+     restart: always
+     container_name: redis
+     ports:
+       - "63791:6379"
+     volumes:
+       - ./redis.conf:/usr/local/etc/redis/redis.conf
+       - ./data:/data
+     command: redis-server /usr/local/etc/redis/redis.conf
+     privileged: true
+     networks:
+       db-net:
+         ipv4_address: 172.20.0.233
+
+networks:
+  db-net:
+    external: true
+    name: mynet
