@@ -1,6 +1,6 @@
 version: '3'
 services:
-  fly:
+  xb:
     image: ghcr.io/cedar2025/xboard:latest
     ports:
        - "7002:7001"
@@ -13,7 +13,7 @@ services:
     restart: always
     networks:
       xb-net:
-        ipv4_address: 172.20.0.11
+        ipv4_address: 172.20.0.pp
 
 networks:
   xb-net:

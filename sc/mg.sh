@@ -1,1 +1,0 @@
-docker compose run -it --rm $0 php artisan migratefromv2b 1.7.4

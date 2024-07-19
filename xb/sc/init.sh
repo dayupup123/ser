@@ -1,0 +1,1 @@
+sed -i "s/pp/$1/g"  ./docker-compose.yaml

@@ -1,0 +1,1 @@
+docker compose run -it --rm $1 php artisan xboard:install
